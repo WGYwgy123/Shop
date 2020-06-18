@@ -17,8 +17,8 @@ public class MailTest {
     //public static Logger logger = Logger.getLogger(SendEmailListener.class.getName());
     public static void sendEmail(String ToUser,String title,String text) {
         String host="smtp.qq.com";//邮箱服务器
-        String sendUser="709581924@qq.com";//发件人登录用户名
-        String sendPassWord="fjgonxhfuemxbfcj";//发件人登录密码
+        String sendUser="";//发件人登录用户名
+        String sendPassWord="";//发件人登录密码
         String toUser=ToUser;//收件人邮箱账号
         try {
             Properties props = new Properties(); // 用于连接邮件服务器的参数配置（发送邮件时才需要用到）
