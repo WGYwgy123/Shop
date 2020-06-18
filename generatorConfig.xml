@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="mysql" targetRuntime="MyBatis3">
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <!--配置数据库连接信息-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/shop?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!--entity-->
+        <javaModelGenerator targetPackage="com.wgy.shop.entity" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--xml-->
+        <sqlMapGenerator targetPackage="mapper"  targetProject=".\src\main\resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--dao接口-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.wgy.shop.dao"  targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!--指定哪个表的生成策略-->
+        <table tableName="activity" domainObjectName="Activity" />
+        <table tableName="address" domainObjectName="Address" />
+        <table tableName="admin" domainObjectName="Admin" />
+        <table tableName="category" domainObjectName="Category" />
+        <table tableName="chat" domainObjectName="Chat" />
+        <table tableName="favorite" domainObjectName="Favorite" />
+        <table tableName="comment" domainObjectName="Comment" />
+        <table tableName="deliver" domainObjectName="Deliver" />
+        <table tableName="goods" domainObjectName="Goods" />
+        <table tableName="imagepath" domainObjectName="ImagePath" />
+        <table tableName="userorder" domainObjectName="Order" />
+        <table tableName="orderitem" domainObjectName="OrderItem" />
+        <table tableName="shopcart" domainObjectName="ShopCart" />
+        <table tableName="consumer" domainObjectName="Consumer" />
+    </context>
+</generatorConfiguration>
